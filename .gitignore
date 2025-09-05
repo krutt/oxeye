@@ -17,6 +17,10 @@ dist
 *.egg
 
 
+### pypi ###
+pypi-token.pypi
+
+
 ### rust ###
 target
 
