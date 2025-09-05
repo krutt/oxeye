@@ -1,0 +1,51 @@
+/* ~~/example.simplicity */
+
+mod witness {
+  const COMPLETE_OR_CANCEL: Either<(u256, [u8; 64]),[u8; 64]> = Left(
+    (
+      0x9bf49a6a0755f953811fce125f2683d50429c3bb49e074147e0089a52eae155f,
+      0x865b365eaa74e82bb25fbd401af5760d1af04168289f10cf26efc9e53f54b43c23761f59ffa6885f6d49fcdf556ddbfff0aabdafcc9cab568c9e82e5f826dd85
+    )
+  );
+}
+
+mod param {
+  const ALICE_PUBLIC_KEY: u256 = 0x9bef8d556d80e43ae7e0becb3a7e6838b95defe45896ed6075bb9035d06c9964;
+  const BOB_PUBLIC_KEY: u256 = 0xe37d58a1aae4ba059fd2503712d998470d3a2522f7e2335f544ef384d2199e02;
+  const EXPECTED_HASH: u256 = 0x3034f1d855651180a6ae0ab3fb46c2b87501297e491e665a097f2f7d4ef5c835;
+}
+
+fn sha2(string: u256) -> u256 {
+  let hasher: Ctx8 = jet::sha_256_ctx_8_init();
+  let hasher: Ctx8 = jet::sha_256_ctx_8_add_32(hasher, string);
+  jet::sha_256_ctx_8_finalize(hasher)
+}
+
+fn checksig(pk: Pubkey, sig: Signature) {
+  let msg: u256 = jet::sig_all_hash();
+  jet::bip_0340_verify((pk, msg), sig);
+}
+
+fn complete_spend(preimage: u256, recipient_sig: Signature) {
+  let hash: u256 = sha2(preimage);
+  assert!(jet::eq_256(hash, param::EXPECTED_HASH));
+  let recipient_pk: Pubkey = param::ALICE_PUBLIC_KEY;
+  checksig(recipient_pk, recipient_sig);
+}
+
+fn cancel_spend(sender_sig: Signature) {
+  let timeout: Height = 1000;
+  jet::check_lock_height(timeout);
+  let sender_pk: Pubkey = param::BOB_PUBLIC_KEY;
+  checksig(sender_pk, sender_sig)
+}
+
+fn main() {
+  match witness::COMPLETE_OR_CANCEL {
+    Left(preimage_and_sig: (u256, Signature)) => {
+      let (preimage, recipient_sig): (u256, Signature) = preimage_and_sig;
+      complete_spend(preimage, recipient_sig);
+    },
+    Right(sender_sig: Signature) => cancel_spend(sender_sig),
+  }
+}
