@@ -98,14 +98,14 @@
     font-size='1.2rem'
     y='10rem'
     >
-    <tspan dy='0' x='40rem'>
+    <tspan dy='0' x='16rem'>
       /ˈäksˌī/
     </tspan>
     <tspan dy='1.6rem' x='16rem'>
-      Language Server Protocol server for Simplicity blockchain
+      Language Server Protocol server for Simplicity High-Level 
     </tspan>
     <tspan dy='1.6rem' x='16rem'>
-      programming language designed for Next-Gen Smart Contracts
+      blockchain programming language
     </tspan>
   </text>
 </svg>

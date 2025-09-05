@@ -15,7 +15,7 @@ classifiers = [
   'Intended Audience :: Developers',
   'Topic :: Software Development :: Libraries :: Python Modules',
 ]
-description = 'Language Server Protocol server for Simplicity blockchain programming language'
+description = 'Language Server Protocol server for Simplicity High-Level blockchain programming language'
 name = 'oxeye'
 license = {file='LICENSE'}
 requires-python = '>=3.9'

@@ -131,12 +131,12 @@
     <tspan
       dy='0rem'
       x='32rem'>
-      Language server protocol and syntax
+      Language Server Protocol server for
     </tspan>
     <tspan
       dy='2rem'
       x='32rem'>
-      highlighter for Simplicity blockchain
+      Simplicity High-Level blockchain
     </tspan>
     <tspan
       dy='2rem'
@@ -153,6 +153,28 @@
     x='32rem'
     y='30rem'
     />
+  <path
+    d='
+      M1150, 480
+      h-630
+      q-9,0 -9,9
+      q0,9 9,9
+      h630
+      z
+    '
+    fill='#DEA584'
+    />
+  <path
+    d='
+      M1150, 480
+      h70
+      q9,0 9,9
+      q0,9 -9,9
+      h-70
+      z
+    '
+    fill='#3572A5'
+    />
   <text
     dominant-baseline='hanging'
     font-family='Arial'
@@ -161,12 +183,21 @@
     y='32rem'
     >
     <tspan>
-      Lua
+      Rust
     </tspan>
     <tspan
       fill='#888'
       >
-      100.0%
+      90.0%
+    </tspan>
+    <tspan
+      dx='26rem'>
+      Python
+    </tspan>
+    <tspan
+      fill='#888'
+      >
+      10.0%
     </tspan>
   </text>
 </svg>
