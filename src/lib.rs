@@ -64,7 +64,7 @@ impl LanguageServer for Backend {
       .await;
   }
 
-  async fn hover(&self, _params: HoverParams) -> Result<Option<Hover>> {
+  async fn hover(&self, _: HoverParams) -> Result<Option<Hover>> {
     Ok(Some(Hover {
       contents: HoverContents::Scalar(MarkedString::String(
         "Oxeye Language Server - Hover information".to_string(),
