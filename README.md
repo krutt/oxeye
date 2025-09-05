@@ -19,6 +19,13 @@ oxeye/
 │   └── lib.rs               # Library definitions
 │
 ├── static/
+│   ├── docs/                # Collection of markdown LSP definitions
+│   │   ├── comprehensive/   # Collection of catchall markdown reference
+│   │   ├── jet_functions/   # Collection of markdown jet function definitions
+│   │   ├── keywords/        # Collection of markdown keyword definitions
+│   │   ├── misc/            # Collection of miscellaneous definitions
+│   │   └── types/           # Collection of type definitions
+│   │
 │   ├── oxeye.svg            # Vector asset used as crest
 │   ├── oxeye-banner.svg     # Vector asset for banner on display in README
 │   └── oxeye-social.svg     # Vector asset used as Open Graph preview
