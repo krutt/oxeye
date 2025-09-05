@@ -1,0 +1,9 @@
+[dependencies]
+tokio = { features = ['full'], version = '1.47.1' }
+tower-lsp = '0.20.0'
+
+
+[package]
+name = 'oxeye'
+version = '0.1.0'
+edition = '2021'

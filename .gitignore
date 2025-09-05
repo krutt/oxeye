@@ -1,0 +1,31 @@
+### envvars ###
+.env
+
+
+### osx ###
+.DS_Store
+
+
+### python ###
+__pycache__/
+.ruff_cache/
+.venv/
+*.py[cod]
+*.so
+dist
+*.egg-info
+*.egg
+
+
+### rust ###
+target
+
+
+### token ###
+pypi-token.pypi
+
+
+### workspace ###
+.idea
+.ignore
+.vscode
