@@ -16,11 +16,21 @@ TBD;
 oxeye/
 │
 ├── src/
-│   └── lib.rs
+│   └── lib.rs               # Library definitions
 │
+├── static/
+│   ├── oxeye.svg            # Vector asset used as crest
+│   ├── oxeye-banner.svg     # Vector asset for banner on display in README
+│   └── oxeye-social.svg     # Vector asset used as Open Graph preview
+│
+├── Cargo.toml               # Rust library dependencies and packaging
 ├── LICENSE                  # Details of MIT License
-└── README.md                # Descriptions and roadmap
+├── README.md                # Descriptions and roadmap
+├── oxeye.pyi                # Stub file for python method declarations
+└── pyproject.toml           # Python library build system and metadata
 ```
+
+  > :see_no_evil: Notable exemptions: `example`, `lockfiles`
 
 ## Contributions
 
