@@ -104,13 +104,18 @@ fn get_capabilities() -> PyResult<String> {
 
 
 #[pyfunction]
-fn cmdline(py: Python) -> PyResult<()> {
+fn get_server_info() -> PyResult<String> {
+  Ok("Oxeye Language Server v0.1.0 - A language server powered by PyO3 and Rust".to_string())
+}
+
+
+#[pyfunction]
+fn serve(py: Python) -> PyResult<()> {
   py.allow_threads(|| {
-    let rt = tokio::runtime::Runtime::new().unwrap();
-    rt.block_on(async {
+    let runtime = tokio::runtime::Runtime::new().unwrap();
+    runtime.block_on(async {
       let stdin = tokio::io::stdin();
       let stdout = tokio::io::stdout();
-
       let (service, socket) = LspService::new(|client| Backend { client });
       Server::new(stdin, stdout, socket).serve(service).await;
     });
@@ -119,17 +124,11 @@ fn cmdline(py: Python) -> PyResult<()> {
 }
 
 
-#[pyfunction]
-fn get_server_info() -> PyResult<String> {
-  Ok("Oxeye Language Server v0.1.0 - A language server powered by PyO3 and Rust".to_string())
-}
-
-
-/// A Python module implemented in Rust using PyO3
+/// Oxeye Language Server Protocol server for Simplicity blockchain programming language
 #[pymodule]
 fn oxeye(m: &Bound<'_, PyModule>) -> PyResult<()> {
-  m.add_function(wrap_pyfunction!(cmdline, m)?)?;
   m.add_function(wrap_pyfunction!(get_capabilities, m)?)?;
   m.add_function(wrap_pyfunction!(get_server_info, m)?)?;
+  m.add_function(wrap_pyfunction!(serve, m)?)?;
   Ok(())
 }

@@ -1,6 +1,7 @@
 [build-system]
-requires = ['maturin>=1.0,<2.0']
+requires = ['maturin >=1.0,<2.0']
 build-backend = 'maturin'
+
 
 [project]
 authors = [
@@ -10,12 +11,11 @@ classifiers = [
   'Development Status :: 3 - Alpha',
   'Programming Language :: Rust',
   'Programming Language :: Python :: Implementation :: CPython',
-  'Programming Language :: Python :: Implementation :: PyPy',
   'Operating System :: OS Independent',
   'Intended Audience :: Developers',
   'Topic :: Software Development :: Libraries :: Python Modules',
 ]
-description = 'A Language Server Protocol (LSP) implementation powered by PyO3 and Rust'
+description = 'Language Server Protocol server for Simplicity blockchain programming language'
 name = 'oxeye'
 license = {file='LICENSE'}
 requires-python = '>=3.9'
@@ -24,7 +24,7 @@ version = '0.1.0'
 
 
 [project.scripts]
-oxeye = 'oxeye:cmdline'
+oxeye = 'oxeye:serve'
 
 
 [tool.maturin]
