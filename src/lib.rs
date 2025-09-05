@@ -655,7 +655,7 @@ fn get_capabilities() -> PyResult<String> {
 
 #[pyfunction]
 fn get_server_info() -> PyResult<String> {
-  Ok("Oxeye Language Server v0.1.0 - A language server powered by PyO3 and Rust".to_string())
+  Ok("Oxeye Language Server v0.1.1 - A language server powered by PyO3 and Rust".to_string())
 }
 
 
