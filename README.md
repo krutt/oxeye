@@ -56,7 +56,8 @@ Or use one of the following plugins on your desired Editor or Integrated Develop
     ├── oxeye.pyi                # Stub file for python method declarations
     └── pyproject.toml           # Python library build system and metadata
 
-  > :see_no_evil: Notable exemptions: `example`, `lockfiles`
+  > :see_no_evil:
+  > Notable exemptions: `example.simplicity`, `formatting rules`, `gitignore` and `lockfiles`
 </details>
 
 ### Prerequisites
