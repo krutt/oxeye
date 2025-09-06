@@ -6,42 +6,143 @@
 [![Last commit](https://img.shields.io/github/last-commit/krutt/oxeye/master)](https://github.com/krutt/oxeye)
 ![Oxeye Banner](static/oxeye-banner.svg)
 
-### Installation
+### Prerequisites
 
-TBD;
+* [python](https://www.python.org) 3.9 and above - High-level general-purpose programming language
+* [pip](https://pypi.org/project/pip) - package installer for Python
 
-### Project structure
+### Getting started
 
-```
-oxeye/
-│
-├── src/
-│   └── lib.rs               # Library definitions
-│
-├── static/
-│   ├── docs/                # Collection of markdown LSP definitions
-│   │   ├── comprehensive/   # Collection of catchall markdown reference
-│   │   ├── jet_functions/   # Collection of markdown jet function definitions
-│   │   ├── keywords/        # Collection of markdown keyword definitions
-│   │   ├── misc/            # Collection of miscellaneous definitions
-│   │   └── types/           # Collection of type definitions
-│   │
-│   ├── oxeye.svg            # Vector asset used as crest
-│   ├── oxeye-banner.svg     # Vector asset for banner on display in README
-│   └── oxeye-social.svg     # Vector asset used as Open Graph preview
-│
-├── Cargo.toml               # Rust library dependencies and packaging
-├── LICENSE                  # Details of MIT License
-├── README.md                # Descriptions and roadmap
-├── oxeye.pyi                # Stub file for python method declarations
-└── pyproject.toml           # Python library build system and metadata
+```sh
+pip install oxeye
 ```
 
-  > :see_no_evil: Notable exemptions: `example`, `lockfiles`
+And then you can start an LSP instance with the following command:
+
+```sh
+oxeye
+```
+
+Or use one of the following plugins on your desired Editor or Integrated Development Environment (IDE)
+
+* Neovim: [oxeye.nvim](https://github.com/krutt/oxeye.nvim)
+* ฯลฯ
 
 ## Contributions
 
-TBD;
+<details>
+  <summary> Project structure </summary>
+
+    oxeye/
+    │
+    ├── src/
+    │   └── lib.rs               # Library definitions
+    │
+    ├── static/
+    │   ├── docs/                # Collection of markdown LSP definitions
+    │   │   ├── comprehensive/   # Collection of catchall markdown reference
+    │   │   ├── jet_functions/   # Collection of markdown jet function definitions
+    │   │   ├── keywords/        # Collection of markdown keyword definitions
+    │   │   ├── misc/            # Collection of miscellaneous definitions
+    │   │   └── types/           # Collection of type definitions
+    │   │
+    │   ├── oxeye.svg            # Vector asset used as crest
+    │   ├── oxeye-banner.svg     # Vector asset for banner on display in README
+    │   └── oxeye-social.svg     # Vector asset used as Open Graph preview
+    │
+    ├── Cargo.toml               # Rust library dependencies and packaging
+    ├── LICENSE                  # Details of MIT License
+    ├── README.md                # Descriptions and roadmap
+    ├── oxeye.pyi                # Stub file for python method declarations
+    └── pyproject.toml           # Python library build system and metadata
+
+  > :see_no_evil: Notable exemptions: `example`, `lockfiles`
+</details>
+
+### Prerequisites
+
+* [git](https://git-scm.com/) - --fast-version-control
+* [uv](https://docs.astral.sh/uv) - Extremely fast Python package & project manager, written in Rust
+
+The following guide walks through setting up your local working environment using `git`
+as distributed version control system and `uv` as Python package and version manager.
+If you do not have `git` installed, run the following command.
+
+<details>
+  <summary> Install using Homebrew (Darwin) </summary>
+  
+  ```bash
+  brew install git
+  ```
+</details>
+
+<details>
+  <summary> Install via binary installer (Linux or Windows Subsystem for Linux [WSL]) </summary>
+  
+  * Debian-based package management
+  ```bash
+  sudo apt install git-all
+  ```
+
+  * Fedora-based package management
+  ```bash
+  sudo dnf install git-all
+  ```
+</details>
+
+<details>
+  <summary> Install using Winget (Windows Powershell) </summary>
+  
+  ```bash
+  winget install --id Git.Git -e --source winget
+  ```
+</details>
+
+If you do not have `uv` installed, run the following command.
+
+<details>
+  <summary> Install using Homebrew (Darwin) </summary>
+
+  ```bash
+  brew install uv
+  ```
+</details>
+
+<details>
+  <summary>
+    Install using standalone installer (Darwin, Linux, or Windows Subsystem for Linux [WSL])
+  </summary>
+
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+</details>
+
+<details>
+  <summary> Install using Winget (Windows Powershell) </summary>
+
+  ```bash
+  winget install --id=astral-sh.uv -e
+  ```
+</details>
+
+Once you have `git` distributed version control system installed, you can
+clone the current repository and  install any version of Python above version
+3.9 for this project. The following commands help you set up and activate a
+Python virtual environment where `uv` can download project dependencies from the `PyPI`
+open-sourced registry defined under `pyproject.toml` file.
+
+<details>
+  <summary> Set up environment and synchronize project dependencies </summary>
+
+  ```bash
+  git clone git@github.com:krutt/oxeye.git
+  cd oxeye
+  uv venv --python 3.9.6
+  source .venv/bin/activate
+  uv sync --dev --seed
+  ```
+</details>
 
 ## Acknowledgements
 
