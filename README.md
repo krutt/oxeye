@@ -145,9 +145,24 @@ open-sourced registry defined under `pyproject.toml` file.
   ```
 </details>
 
+## Roadmap
+
+* Cross-check and update language references
+* Implement Go to definitions
+
 ## Acknowledgements
 
 1. [อัญชัญ - Anchan](https://www.f0nt.com/release/anchan/) typeface by [Alisara Zilch](https://www.f0nt.com/author/zilch/)
+2. [BlockStreamResearch/SimplicityHL](https://github.com/BlockStreamResearch/SimplicityHL) -
+  Rust-like high-level language that compiles down to Simplicity bytecode. Work in progress.
+3. [BlockStreamResearch/simplicity](https://github.com/BlockStreamResearch/simplicity) -
+  Simplicity is a blockchain programming language designed as an alternative to Bitcoin script.
+4. [BlockStreamResearch/rust-simplicity](https://github.com/BlockStreamResearch/rust-simplicity) -
+  Official [Rust](https://www.rust-lang.org) library for [Simplicity language](https://simplicity-lang.org)
+5. [Simplicity: Next-Generation Smart Contracts for Bitcoin](https://simplicity-lang.org) -
+  Developers write SimplicityHL, full nodes execute Simplicity.
+6. [Tower LSP](https://github.com/ebkalderon/tower-lsp) -
+  Language Server Protocol implementation written in Rust 
 
 ## License
 
