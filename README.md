@@ -64,10 +64,14 @@ Or use one of the following plugins on your desired Editor or Integrated Develop
 
 * [git](https://git-scm.com/) - --fast-version-control
 * [uv](https://docs.astral.sh/uv) - Extremely fast Python package & project manager, written in Rust
+* [rustup](https://rustup.rs) - An installer for the systems programming language Rust
+* [maturin](https://github.com/PyO3/maturin) - Build and publish creates with pyo3, cffi and uniffi
+  bindings as well as rust binaries as python packages
 
 The following guide walks through setting up your local working environment using `git`
-as distributed version control system and `uv` as Python package and version manager.
-If you do not have `git` installed, run the following command.
+as distributed version control system, `uv` as Python package and version manager,
+`rustup` toolchain installer for Rust programming language and `maturin` buildtools for
+python packages using Rust. If you do not have `git` installed, run the following command.
 
 <details>
   <summary> Install using Homebrew (Darwin) </summary>
@@ -127,11 +131,78 @@ If you do not have `uv` installed, run the following command.
   ```
 </details>
 
-Once you have `git` distributed version control system installed, you can
-clone the current repository and  install any version of Python above version
-3.9 for this project. The following commands help you set up and activate a
-Python virtual environment where `uv` can download project dependencies from the `PyPI`
-open-sourced registry defined under `pyproject.toml` file.
+If you do not have `rustup` installed, run the following command.
+
+<details>
+  <summary>
+    Install using Homebrew (Darwin)
+  </summary>
+
+  ```bash
+  brew install rustup
+  ```
+</details>
+<details>
+  <summary>
+    Install using standalone installer (Darwin, Linux or Windows Subsystem for Linux [WSL])
+  </summary>
+
+  ```bash
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+</details>
+<details>
+  <summary> Install using Winget (Windows Powershell) </summary>
+  
+  ```bash
+  winget install --id Rustlang.Rustup
+  ```
+</details>
+
+After running `rustup` in your command line, you should be able to validate correct installations
+as such:
+
+```bash
+rustc --version
+cargo --version
+```
+
+If you do not have `maturin` installed, run the following command.
+
+<details>
+  <summary> Install using Homebrew (Darwin) </summary>
+
+  ```bash
+  brew install maturin
+  ```
+</details>
+<details>
+  <summary> Install using Pipx from PyPI (Python) </summary>
+
+  ```bash
+  pipx install maturin
+  ```
+</details>
+<details>
+  <summary> Install using Uv from PyPI (Python) </summary>
+
+  ```bash
+  uv tool install maturin
+  ```
+</details>
+<details>
+  <summary> Build from Source using Cargo (Rust) </summary>
+
+  ```bash
+  cargo install --locked maturin
+  ```
+</details>
+
+Once you have all tools installed, you can clone the current repository and
+install any version of Python above version 3.9 for this project. The following
+commands help you set up and activate a Python virtual environment where `uv`
+can download project dependencies from the `PyPI` open-sourced registry defined
+under `pyproject.toml` file.
 
 <details>
   <summary> Set up environment and synchronize project dependencies </summary>
