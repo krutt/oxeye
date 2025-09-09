@@ -1,4 +1,4 @@
-# oxeye
+# Oxeye
 
 [![Bitcoin-only](https://img.shields.io/badge/bitcoin-only-FF9900?logo=bitcoin)](https://twentyone.world)
 [![Top](https://img.shields.io/github/languages/top/krutt/oxeye)](https://github.com/krutt/oxeye)
