@@ -11,6 +11,14 @@ version = '0.1.1'
 edition = '2021'
 
 
+[profile.release]
+opt-level = 'z'
+codegen-units = 1
+lto = true
+panic = 'abort'
+strip = true
+
+
 [lib]
 name = 'oxeye'
 crate-type = ['cdylib']
